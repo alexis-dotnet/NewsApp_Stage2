@@ -1,0 +1,24 @@
+@model NewsApp.ViewModels.NewsDocViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>@Model.Main</title>
+</head>
+<body>
+
+@{
+    ViewBag.Title = Model.Main;
+}
+
+<h1>@Model.Main</h1>
+<div>Id: @Model.Id</div>
+<p>
+  NewsType: @Model.Type <br/>
+</p>
+<div>
+  @Html.ActionLink("Home", "Index")
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+@using NewsApp.Entities
+@model NewsApp.ViewModels.NewsDocViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Create</title>
+</head>
+<body>
+
+@{
+    ViewBag.Title = "Create";
+}
+<h1>Create</h1>
+
+@using (Html.BeginForm())
+{
+    <div>
+      @Html.LabelFor(x => x.Main)
+      @Html.EditorFor(x => x.Main)
+      @Html.ValidationMessageFor(x => x.Main)
+    </div>
+    <div>
+      @Html.LabelFor(x => x.Type)
+      @Html.DropDownListFor(x => x.Type, Html.GetEnumSelectList(typeof(NewsType)))
+      @Html.ValidationMessageFor(x => x.Type)
+    </div>
+    <div>
+      <input type="submit" value="Submit"/>
+    </div>
+}
+
+</body>
+</html>

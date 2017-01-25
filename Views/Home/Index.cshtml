@@ -1,0 +1,23 @@
+@model NewsApp.ViewModels.HomePageViewModel
+
+<html>
+<body>
+<h1>Welcome</h1>
+<h3>@Model.CurrentGreeting</h3>
+<table>
+  @foreach (var msg in Model.Messages)
+  {
+      <tr>
+        <td>
+          @Html.ActionLink(msg._id, "Details", new { id = msg._id })
+          @msg._id
+        </td>
+        <td>@msg.lead_paragraph</td>
+      </tr>
+  }
+</table>
+
+<br/>
+@Html.ActionLink("Create", "Create")
+</body>
+</html>
